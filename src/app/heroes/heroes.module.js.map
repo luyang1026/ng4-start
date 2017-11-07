@@ -1,0 +1,1 @@
+{"version":3,"file":"heroes.module.js","sourceRoot":"","sources":["heroes.module.ts"],"names":[],"mappings":";;;;;;;AAAA,sCAAwC;AACxC,mDAAsD;AACtD,0CAAiD;AAEjD,2EAAwE;AAWxE,IAAa,YAAY;IAAzB;IAA0B,CAAC;IAAD,mBAAC;AAAD,CAAC,AAA3B,IAA2B;AAAd,YAAY;IATxB,eAAQ,CAAC;QACT,OAAO,EAAC;YACN,qBAAY;YACZ,oCAAmB;SACpB;QACD,YAAY,EAAC;YACX,sCAAiB;SAClB;KACD,CAAC;GACW,YAAY,CAAE;AAAd,oCAAY"}
