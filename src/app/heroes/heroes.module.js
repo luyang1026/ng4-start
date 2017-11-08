@@ -8,7 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require("@angular/core");
 var heroes_routing_1 = require("./heroes-routing");
 var common_1 = require("@angular/common");
+var forms_1 = require("@angular/forms");
 var heroList_component_1 = require("../component/hero/heroList.component");
+var heroDetail_component_1 = require("../component/hero/heroDetail.component");
+var hero_service_1 = require("../service/hero/hero.service");
 var HeroesModule = (function () {
     function HeroesModule() {
     }
@@ -18,10 +21,15 @@ HeroesModule = __decorate([
     core_1.NgModule({
         imports: [
             common_1.CommonModule,
+            forms_1.FormsModule,
             heroes_routing_1.heroesRoutingModule
         ],
         declarations: [
-            heroList_component_1.HeroListComponent
+            heroList_component_1.HeroListComponent,
+            heroDetail_component_1.HeroDetailComponent
+        ],
+        providers: [
+            hero_service_1.HeroSevice
         ]
     })
 ], HeroesModule);

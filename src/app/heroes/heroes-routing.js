@@ -8,8 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var heroList_component_1 = require("../component/hero/heroList.component");
+var heroDetail_component_1 = require("../component/hero/heroDetail.component");
 var route = [
-    { path: 'heroes', component: heroList_component_1.HeroListComponent }
+    { path: 'heroes', component: heroList_component_1.HeroListComponent },
+    { path: 'hero/:id', component: heroDetail_component_1.HeroDetailComponent }
 ];
 var heroesRoutingModule = (function () {
     function heroesRoutingModule() {

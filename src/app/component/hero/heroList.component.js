@@ -9,13 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
 var hero_service_1 = require("../../service/hero/hero.service");
 var HeroListComponent = (function () {
-    function HeroListComponent(heroService) {
+    function HeroListComponent(heroService, router) {
         this.heroService = heroService;
+        this.router = router;
     }
+    HeroListComponent.prototype.goToDetail = function (id) {
+        this.router.navigate(['hero', id]);
+    };
     HeroListComponent.prototype.ngOnInit = function () {
-        this.heroes = this.heroService.getHeroes();
+        var _this = this;
+        this.heroService.getHeroes().then(function (heroes) { return _this.heroes = heroes; });
     };
     return HeroListComponent;
 }());
@@ -24,7 +30,8 @@ HeroListComponent = __decorate([
         styleUrls: ['./heroList.component.css'],
         templateUrl: './heroList.component.html'
     }),
-    __metadata("design:paramtypes", [hero_service_1.HeroSevice])
+    __metadata("design:paramtypes", [hero_service_1.HeroSevice,
+        router_1.Router])
 ], HeroListComponent);
 exports.HeroListComponent = HeroListComponent;
 //# sourceMappingURL=heroList.component.js.map

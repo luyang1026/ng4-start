@@ -7,7 +7,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
+var http_1 = require("@angular/http");
 var app_routing_1 = require("./app-routing");
+var angular_in_memory_web_api_1 = require("angular-in-memory-web-api");
+var in_memory_data_service_1 = require("./service/hero/in-memory-data.service");
 var heroes_module_1 = require("./heroes/heroes.module");
 var app_component_1 = require("./app.component");
 var _404_1 = require("./component/404/404");
@@ -21,6 +24,8 @@ AppModule = __decorate([
         imports: [
             platform_browser_1.BrowserModule,
             heroes_module_1.HeroesModule,
+            http_1.HttpModule,
+            angular_in_memory_web_api_1.InMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService),
             app_routing_1.AppRoutingModule
         ],
         declarations: [
