@@ -9,10 +9,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var hero_service_1 = require("../../service/hero/hero.service");
 var HeroListComponent = (function () {
-    function HeroListComponent() {
-        this.heroes = [{ id: 1, name: 'ly' }, { id: 2, name: 'sun' }];
+    function HeroListComponent(heroService) {
+        this.heroService = heroService;
     }
+    HeroListComponent.prototype.ngOnInit = function () {
+        this.heroes = this.heroService.getHeroes();
+    };
     return HeroListComponent;
 }());
 HeroListComponent = __decorate([
@@ -20,7 +24,7 @@ HeroListComponent = __decorate([
         styleUrls: ['./heroList.component.css'],
         templateUrl: './heroList.component.html'
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [hero_service_1.HeroSevice])
 ], HeroListComponent);
 exports.HeroListComponent = HeroListComponent;
 //# sourceMappingURL=heroList.component.js.map
