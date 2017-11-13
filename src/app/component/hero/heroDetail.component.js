@@ -21,6 +21,11 @@ var HeroDetailComponent = (function () {
     HeroDetailComponent.prototype.back = function (id) {
         this.router.navigate(['heroes', { id: id }]);
     };
+    HeroDetailComponent.prototype.save = function () {
+        var _this = this;
+        this.heroService.update(this.hero)
+            .then(function () { return _this.back(_this.hero.id); });
+    };
     HeroDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.paramMap

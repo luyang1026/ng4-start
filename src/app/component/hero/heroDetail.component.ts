@@ -18,6 +18,10 @@ export class HeroDetailComponent implements OnInit{
   back(id:number){
     this.router.navigate(['heroes',{id:id}])
   }
+  save(){
+    this.heroService.update(this.hero)
+      .then(()=>this.back(this.hero.id))
+  }
   ngOnInit():void{
     this.route.paramMap
       .switchMap((params:ParamMap)=>this.heroService.getHero(+params.get('id')))

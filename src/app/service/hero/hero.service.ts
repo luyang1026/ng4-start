@@ -10,6 +10,7 @@ export class HeroSevice{
     console.error('error',error)
     return Promise.reject(error.message||error)
   }
+  private headers = new Headers({'Content-Type':'application/json'})
   constructor(
     private http: Http
   ){}
@@ -26,5 +27,28 @@ export class HeroSevice{
       .then(response=>response.json().data as Hero)
       .catch(this.errorHandler)
   }
-  update(hero:Hero):Promise<
+  update(hero:Hero):Promise<void>{
+    const url = `${this.heroesUrl}/${hero.id}`
+    return this.http
+      .put(url,JSON.stringify(hero),{headers:this.headers})
+      .toPromise()
+      .then(hero=>hero)
+      .catch(this.errorHandler)
+  }
+  create(name:string):Promise<Hero>{
+    const url = `${this.heroesUrl}`
+    return this.http
+      .post(url,JSON.stringify({name:name}),{headers:this.headers})
+      .toPromise()
+      .then(response=>response.json().data as Hero)
+      .catch(this.errorHandler)
+  }
+  delete(id:number):Promise<void>{
+    const url = `${this.heroesUrl}/${id}`
+    return this.http
+      .delete(url,{headers:this.headers})    
+      .toPromise()
+      .then(()=>null)
+      .catch(this.errorHandler)
+  }
 }
