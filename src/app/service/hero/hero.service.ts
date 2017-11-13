@@ -32,7 +32,7 @@ export class HeroSevice{
     return this.http
       .put(url,JSON.stringify(hero),{headers:this.headers})
       .toPromise()
-      .then(hero=>hero)
+      .then(()=>{})
       .catch(this.errorHandler)
   }
   create(name:string):Promise<Hero>{
