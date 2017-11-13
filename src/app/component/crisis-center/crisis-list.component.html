@@ -1,0 +1,8 @@
+<ul class="items">
+	<li *ngFor="let crisisItem of crisis">
+		<a>
+			<span class="badge">{{crisisItem.id}}</span>{{crisisItem.name}}
+		</a>
+	</li>
+</ul>
+<router-outlet></router-outlet>

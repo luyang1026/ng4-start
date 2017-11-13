@@ -2,5 +2,7 @@
 <nav>
   <a routerLink="/heroes" routerLinkActive="active">Heroes</a>
   <a routerLink="/crisis-center" routerLinkActive="active">Crisis Center</a>
+  <a [routerLink]="[{outlets:{pop:'haha'}}]" routerLinkActive="active">haha</a>
 </nav>
 <router-outlet></router-outlet>
+<router-outlet name="pop"></router-outlet>

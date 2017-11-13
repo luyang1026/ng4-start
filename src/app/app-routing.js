@@ -8,7 +8,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var _404_1 = require("./component/404/404");
+var crisis_home_component_1 = require("./component/crisis-center/crisis-home.component");
 var appRoutes = [
+    {
+        path: 'haha',
+        component: crisis_home_component_1.CrisisHomeComponent,
+        outlet: 'pop'
+    },
     {
         path: '', redirectTo: '/heroes', pathMatch: 'full'
     },

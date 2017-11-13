@@ -2,7 +2,13 @@ import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
 
 import { PageNotFoundComponent } from './component/404/404'
+import { CrisisHomeComponent} from './component/crisis-center/crisis-home.component'
 const appRoutes: Routes = [
+  {
+    path:'haha',
+    component:CrisisHomeComponent,
+    outlet:'pop'
+  },
   {
     path:'', redirectTo:'/heroes', pathMatch:'full'
   },
